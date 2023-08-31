@@ -1,7 +1,11 @@
 import javax.swing.*;
+import javax.swing.text.BadLocationException;
 import java.awt.*;
 
+
 public class Display extends JTextField {
+    // Attribute
+    private int limit;
     // Constructor
     public Display(int rgb01, int rgb02, int rgb03){
         this.setBounds(0,0, 320, 150);
@@ -10,5 +14,6 @@ public class Display extends JTextField {
         this.setForeground(new Color(255, 255, 255));
         this.setFont(new Font("Calibri", 0, 50));
         this.setEditable(false);
+        this.setDocument(new JTextFieldLimit(12));
     }
 }

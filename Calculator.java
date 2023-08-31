@@ -51,78 +51,18 @@ public class Calculator {
         window.add(buttonEquals);
 
         // Events --> Connect the JButton with JTextField
-        button0.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed (ActionEvent e){
-                display.setText(display.getText() + "0");
-            }
-        });
-        button1.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed (ActionEvent e){
-                display.setText(display.getText() + "1");
-            }
-        });
-        button2.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed (ActionEvent e){
-                display.setText(display.getText() + "2");
-            }
-        });
-        button3.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed (ActionEvent e){
-                display.setText(display.getText() + "3");
-            }
-        });
-        button4.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed (ActionEvent e){
-                display.setText(display.getText() + "4");
-            }
-        });
-        button5.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed (ActionEvent e){
-                display.setText(display.getText() + "5");
-            }
-        });
-        button6.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed (ActionEvent e){
-                display.setText(display.getText() + "6");
-            }
-        });
-        button7.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed (ActionEvent e){
-                display.setText(display.getText() + "7");
-            }
-        });
-        button8.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed (ActionEvent e){
-                display.setText(display.getText() + "8");
-            }
-        });
-        button9.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed (ActionEvent e){
-                display.setText(display.getText() + "9");
-            }
-        });
-        buttonPoint.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed (ActionEvent e){
-                display.setText(display.getText() + ".");
-            }
-        });
-        buttonAc.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed (ActionEvent e){
-                display.setText(null);
-            }
-        });
+        button0.addActionListener(e -> display.setText(display.getText() + "0"));
+        button1.addActionListener(e -> display.setText(display.getText() + "1"));
+        button2.addActionListener(e -> display.setText(display.getText() + "2"));
+        button3.addActionListener(e -> display.setText(display.getText() + "3"));
+        button4.addActionListener(e -> display.setText(display.getText() + "4"));
+        button5.addActionListener(e -> display.setText(display.getText() + "5"));
+        button6.addActionListener(e -> display.setText(display.getText() + "6"));
+        button7.addActionListener(e -> display.setText(display.getText() + "7"));
+        button8.addActionListener(e -> display.setText(display.getText() + "8"));
+        button9.addActionListener(e -> display.setText(display.getText() + "9"));
+        buttonPoint.addActionListener(e -> display.setText(display.getText() + "."));
+        buttonAc.addActionListener(e -> display.setText(null));
         // Buttons Operators
         buttonPlus.addActionListener(new ActionListener() {
             @Override
@@ -164,22 +104,22 @@ public class Calculator {
                 String answer;
                 if (operator.equalsIgnoreCase("+")) {
                     result = first_num + second_num;
-                    answer = String.format("%.2f", result);
+                    answer = String.format("%.1f", result);
                     display.setText(answer);
                 }
                 if (operator.equalsIgnoreCase("-")) {
                     result = first_num - second_num;
-                    answer = String.format("%.2f", result);
+                    answer = String.format("%.1f", result);
                     display.setText(answer);
                 }
                 if (operator.equalsIgnoreCase("*")) {
                     result = first_num * second_num;
-                    answer = String.format("%.2f", result);
+                    answer = String.format("%.1f", result);
                     display.setText(answer);
                 }
                 if (operator.equalsIgnoreCase("/")) {
                     result = first_num / second_num;
-                    answer = String.format("%.2f", result);
+                    answer = String.format("%.1f", result);
                     display.setText(answer);
                 }
             }
